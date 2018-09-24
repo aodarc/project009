@@ -34,9 +34,6 @@ PROJECT_APPS = (
     'parsbot.app_name',
 )
 
-DIFF_APPS = (
-    # 'channels',
-)
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -45,8 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'channels',
     *PROJECT_APPS,
-    *DIFF_APPS
 ]
 
 # ASGI_APPLICATION = 'project009.parsbot.app_name.routing.application'
