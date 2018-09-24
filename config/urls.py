@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from parsbot.chat.views import ChatBotTemplateView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', ChatBotTemplateView.as_view())
 ]
