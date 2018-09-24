@@ -2,7 +2,7 @@ from django.views.generic import TemplateView
 
 
 class ChatBotTemplateView(TemplateView):
-    template_name = 'base.html'
+    template_name = 'chat_page.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
