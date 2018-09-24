@@ -26,3 +26,22 @@ class ProductHistory(models.Model):
 
     product = models.ForeignKey(to='Product', on_delete=models.CASCADE, related_name='history')
     price = models.DecimalField(max_digits=19, decimal_places=2)
+
+
+def selenium_entrypoint(product=None):
+    product.status = Product.WATCHING
+
+    product_details = {'price': '', 'title': ''}  # parsed from site
+    product.title = product_details['title']
+
+    product.save()
+
+    history = ProductHistory(
+        product=product,
+        price=product_details['price']
+    )
+    history.save()
+
+
+def celery_entrypoint(product):
+    selenium_entrypoint(product)
